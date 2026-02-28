@@ -26,15 +26,15 @@ class Solution(object):
 
 # s = Solution()
 # print(s.reverse(-1331))
+class Solution(object):
     def isPalindrome(self, x):
         reverse = 0
         remaining = abs(x)
-        limit = 2**31
-        if(x< -limit or x > limit-1):
-            return 0
         while remaining:
             reverse = reverse*10 + remaining%10
             remaining = remaining//10
+        if(reverse < (-2**31) or reverse > (2**31 - 1)):
+            return 0            
         return -reverse if x < 0 else reverse
 s = Solution()
-print(s.isPalindrome(121))
+print(s.isPalindrome(-2147483412))
