@@ -17,6 +17,7 @@ class Solution(object):
             last_digit = x%10
             reverse = reverse *10 + last_digit
             x = x//10
+        reverse = reverse*sign
         if(reverse < -2 ** 31 or reverse > 2 ** 31):
             return 0
         else:
@@ -24,4 +25,4 @@ class Solution(object):
         
 
 s = Solution()
-print(s.reverse(1334))
+print(s.reverse(-1331))
